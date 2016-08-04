@@ -1,0 +1,38 @@
+{
+  "name": "kat-foo",
+  "version": "0.0.0",
+  "description": "Tessel project",
+  "scripts": {
+    "watch": "watchify client/main.js -o public/app.js -v",
+    "build": "browserify -t node-lessify client/main.js -o public/app.js",
+    "start": "npm run watch & nodemon server.js"
+  },
+  "browserify": {
+    "transform": [
+      "node-lessify"
+    ]
+  },
+  "repository": "www.github.com/tessel/t2-cli",
+  "keywords": [
+    "Tessel"
+  ],
+  "license": "MIT",
+  "readme": "A bare bones Tessel 2 blinky script.",
+  "dependencies": {
+    "ambient-attx4": "^0.2.8",
+    "bootstrap-less": "^3.3.8",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "moment": "^2.14.1",
+    "node-lessify": "^0.1.4",
+    "servo-pca9685": "^0.1.3",
+    "tessel-av": "^0.7.0",
+    "tessel-wifi": "0.0.1",
+    "tiny-router": "^0.1.3"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "nodemon": "^1.10.0",
+    "watchify": "^3.7.0"
+  }
+}

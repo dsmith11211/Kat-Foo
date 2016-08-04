@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kat Foo</title>
+  </head>
+ 
+  <body>
+   
+    <h1>Kat Foo</h1>
+
+    <button class="feed_cta">Feed Us</button>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"> </script>
+
+    <script>
+
+      // When one of our LED buttons is clicked, call toggleLED
+      $('.feed_cta').click(function(){
+          $.ajax({
+            type: "GET",
+            url: '/feed',
+            success: function() { alert('kitties will be fed!'); },
+          });
+      });
+
+      $('.led').click(toggleLED);
+
+      function toggleLED() {
+
+        // Get the led number of the clicked button
+        var index = this.id.split('-')[1];
+
+        // Make an AJAX post to our tessel with the index
+        $.ajax({
+          type: "GET",
+          url: '/leds/' + index,
+          success: function() { console.log('led ' + index + ' toggled'); },
+        });
+      }
+    </script>
+  </body>
+</html>
