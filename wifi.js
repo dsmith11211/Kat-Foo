@@ -3,8 +3,6 @@
  * to how require('tessel') works.
  */ 
 var wifi = require('wifi-cc3000');
-var network = 'Bouche'; // put in your network name here
-var pass = '325168499876'; // put in your password here, or leave blank for unsecured
 var security = 'wpa2'; // other options are 'wep', 'wpa', or 'unsecured'
 var timeouts = 0;
 
